@@ -1,0 +1,40 @@
+# Core
+
+/wp-admin/
+/wp-content/index.php
+/wp-content/languages
+/wp-content/plugins/index.php
+/wp-content/themes/index.php
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+
+wp-content/mu-plugins/
+wp-content/plugins-bk/
+wp-content/plugins/
+test-api/
+wp-content/*
+
+!/wp-content/themes/backflow-theme/
+
+# Custom plugins
+!/wp-content/plugins/ab-import/
+
+# Log files
+#*.log
+
+# htaccess
+/.htaccess
+*.png
+*.jpg
+*.csv
+csv-import/
+*.sql
+*.gz
+wp-content/exit/
+*.bmp
+*.ico
+wp-admintest.txt
