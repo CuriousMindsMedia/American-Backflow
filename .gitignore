@@ -14,14 +14,21 @@
 
 wp-content/mu-plugins/
 wp-content/plugins-bk/
-wp-content/plugins/
+wp-content/plugins/*
+wp-content/gallery/
+wp-content/themes/
+wp-content/woocommerce-multiple-customer-addresses/
+
 test-api/
-wp-content/*
+wp-content/uploads
 
 !/wp-content/themes/backflow-theme/
+!wp-content/themes/backflow-theme/
 
 # Custom plugins
-!/wp-content/plugins/ab-import/
+
+!wp-content/plugins/backflow-import
+!wp-content/plugins/backflow-import/
 
 # Log files
 #*.log
@@ -38,3 +45,11 @@ wp-content/exit/
 *.bmp
 *.ico
 wp-admintest.txt
+wp-content/ai1wm-backups/
+wp-content/webtoffee_import/
+wp-content/webtoffee_iew_log/
+wp-content/webtoffee_export/
+wp-content/advanced-cache.php
+wp-content/tablepress-combined.min.css
+wp-content/tablepress-custom.css
+wp-content/tablepress-custom.min.css
