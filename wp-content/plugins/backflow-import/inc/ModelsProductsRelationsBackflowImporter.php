@@ -12,6 +12,9 @@ class ModelsProductsRelationsBackflowImporter extends BaseBackflowImporter {
      */
     public function import() {
 
+        if(function_exists('vi')) {
+            vi($this->csv->data);
+        };
         foreach ( $this->csv->data as $item ) {
             $this->item = $item;
 
@@ -33,7 +36,12 @@ class ModelsProductsRelationsBackflowImporter extends BaseBackflowImporter {
      * Import product.
      */
     protected function importModelsProductsRelations() {
-        if ($id = $this->getProductBySku($this->getSKU())) {
+        $id = $this->getProductBySku($this->getSKU());
+        
+        if(function_exists('vi')) {
+            vi($id);
+        };
+        if ($id == $this->getProductBySku($this->getSKU())) {
 
             $this->setSizeAttribute($id);
             $this->setBrandAttribute($id);
@@ -54,8 +62,8 @@ class ModelsProductsRelationsBackflowImporter extends BaseBackflowImporter {
     }
 
     protected function setModelRelation($product_id) {
-
-        if ($model_id = $this->getProductBySku($this->getModel())) {
+        $model_id = $this->getProductBySku($this->getModel());
+        if ($model_id == $this->getProductBySku($this->getModel())) {
             $this->setProductCategory($model_id);
 
             $model_parts_products = get_field('model_parts_products', $model_id, false);
@@ -76,6 +84,9 @@ class ModelsProductsRelationsBackflowImporter extends BaseBackflowImporter {
     protected function setCustomProductOrder() {
         global $wpdb;
 
+        if(function_exists('vi')) {
+            vi($this);
+        };
         $table = 'custom_product_order';
         $sku = $this->getSKU() ?: null;
         $category = $this->getProductCategory() ?: null;

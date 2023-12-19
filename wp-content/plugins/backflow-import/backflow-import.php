@@ -14,20 +14,17 @@ define('BACKFLOW_IMPORT_URL', plugin_dir_url(__FILE__));
 
 class BackflowImport {
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->register_activation_hooks();
         $this->add_base_actions();
     }
 
-    public function register_activation_hooks()
-    {
+    public function register_activation_hooks() {
         // add plugin pages
         register_activation_hook(__FILE__, [$this, 'create_plugin_pages']);
     }
 
-    public function add_base_actions()
-    {
+    public function add_base_actions() {
         // admin_menu
         add_action('admin_menu', array($this, 'admin_menu'));
         // admin_enqueue_scripts
@@ -44,8 +41,7 @@ class BackflowImport {
         add_action('admin_notices', [$this, 'backflow_models_products_relations_import_success']);
     }
 
-    public function admin_menu()
-    {
+    public function admin_menu() {
         add_menu_page(
             __('Backflow Products Import', 'backflow'),
             __('Backflow Products Import', 'backflow'),
@@ -148,8 +144,7 @@ class BackflowImport {
         <?php endif;
     }
 
-    public static function import_scripts()
-    {
+    public static function import_scripts() {
         wp_enqueue_style('backflow-import-style', plugin_dir_url( __FILE__ ) . 'assets/css/style.css', []);
         wp_enqueue_script('backflow-import-script', plugin_dir_url( __FILE__ ) . 'assets/js/backflow-import.js', array( 'jquery' ), '', true);
     }
@@ -350,7 +345,8 @@ class BackflowImport {
                 } else {
 
                     $csv = new ParseCsv\Csv();
-                    $csv_file_content = file_get_contents( $_FILES['csv']['tmp_name'] );
+                    //$csv_file_content = file_get_contents( $_FILES['csv']['tmp_name'] );
+                    $csv_file_content = $_FILES['csv']['tmp_name'];
 
 //                    $csv->load_data($csv_file_content);
 //                    $total_count = $csv->getTotalDataRowCount();
@@ -364,9 +360,10 @@ class BackflowImport {
 
                     //$limit = isset($_POST['limit']) && !empty($_POST['limit']) ? $_POST['limit'] : 10;
 
-                    $limit = 10;
+                    $limit = 100; 
                     $offset = ($paged * $limit) - $limit;
 
+                    $csv->delimiter = ",";
                     $csv->parse($csv_file_content, $offset, $limit);
 
                     $modelsProductsRelationsBackflowImporter = new ModelsProductsRelationsBackflowImporter($csv, [
@@ -618,7 +615,3 @@ class BackflowImport {
 }
 
 $csvImport = new BackflowImport();
-
-if(function_exists('vi')) {
-    vi($csvImport);
-};

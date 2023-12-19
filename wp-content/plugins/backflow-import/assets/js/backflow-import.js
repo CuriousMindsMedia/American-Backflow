@@ -83,7 +83,7 @@
 
                         updResponseMsg(response);
                     } else if (response.paged > 0) {
-                        console.log(response);
+                        
                         updResponseMsg(response);
                         importData(response);
                     }
