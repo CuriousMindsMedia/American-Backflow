@@ -1,0 +1,274 @@
+.export-add-fields {
+    display: none;
+}
+
+.generate-counties-cities-status {
+    display: none;
+}
+
+.success-msg {
+    display: none;
+}
+
+.success-msg-cli {
+    display: none;
+}
+
+/* section-form-wrap */
+.section-form-wrap {
+    position: relative;
+    /*max-width: 300px;*/
+}
+
+.section-form-wrap input[type='text'],
+.section-form-wrap input[type='tel'],
+.section-form-wrap input[type='email'],
+.section-form-wrap input[type='search'],
+.section-form-wrap textarea,
+.section-form-wrap select {
+    width: 100%;
+}
+
+.section-form-wrap input[type='number'] {
+    width: 50px;
+}
+
+.section-form-wrap::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    content: '';
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(255, 255, 255, 0.9) url('../images/rolling.gif') center center / 60px no-repeat;
+}
+
+.section-form-wrap.loading::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* -----------------------------------------------------
+   CSS Progress Bars
+-------------------------------------------------------- */
+.cssProgress {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cssProgress .progress1,
+.cssProgress .progress2,
+.cssProgress .progress3 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+}
+
+.cssProgress .cssProgress-bar {
+    display: block;
+    float: left;
+    width: 0%;
+    height: 100%;
+    background: #3798d9;
+    box-shadow: inset 0px -1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-transition: width 0.8s ease-in-out;
+    transition: width 0.8s ease-in-out;
+}
+
+.cssProgress .cssProgress-label {
+    position: absolute;
+    overflow: hidden;
+    left: 0px;
+    right: 0px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.3);
+}
+
+.cssProgress .cssProgress-info {
+    background-color: #9575cd !important;
+}
+
+.cssProgress .cssProgress-danger {
+    background-color: #ef5350 !important;
+}
+
+.cssProgress .cssProgress-success {
+    background-color: #66bb6a !important;
+}
+
+.cssProgress .cssProgress-warning {
+    background-color: #ffb74d !important;
+}
+
+.cssProgress .cssProgress-right {
+    float: right !important;
+}
+
+.cssProgress .cssProgress-label-left {
+    margin-left: 10px;
+    text-align: left !important;
+}
+
+.cssProgress .cssProgress-label-right {
+    margin-right: 10px;
+    text-align: right !important;
+}
+
+.cssProgress .cssProgress-label2 {
+    display: block;
+    margin: 2px 0;
+    padding: 0 8px;
+}
+
+.cssProgress .cssProgress-label2.cssProgress-label2-right {
+    text-align: right;
+}
+
+.cssProgress .cssProgress-label2.cssProgress-label2-center {
+    text-align: center;
+}
+
+.cssProgress .cssProgress-stripes,
+.cssProgress .cssProgress-active,
+.cssProgress .cssProgress-active-right {
+    background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.125) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.125) 50%, rgba(255, 255, 255, 0.125) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.125) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.125) 50%, rgba(255, 255, 255, 0.125) 75%, transparent 75%, transparent);
+    background-size: 35px 35px;
+}
+
+/* -----------------------------------------------------
+  Progress Bar 1
+-------------------------------------------------------- */
+.progress1 {
+    background-color: #EEE;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress1 .cssProgress-bar {
+    height: 18px;
+}
+
+.progress1 .cssProgress-label {
+    line-height: 18px;
+}
+
+/* -----------------------------------------------------
+   Progress Bar 2
+-------------------------------------------------------- */
+.progress2 {
+    background-color: #EEE;
+    border-radius: 9px;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress2 .cssProgress-bar {
+    height: 18px;
+    border-radius: 9px;
+}
+
+.progress2 .cssProgress-label {
+    line-height: 18px;
+}
+
+/* -----------------------------------------------------
+   Progress Bar 3
+-------------------------------------------------------- */
+.progress3 {
+    width: auto !important;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.progress3 .cssProgress-bar {
+    height: 16px;
+    border-radius: 3px;
+}
+
+.progress3 .cssProgress-label {
+    line-height: 16px;
+}
+
+/* -----------------------------------------------------
+  Progress Bar 4
+-------------------------------------------------------- */
+.progress4 {
+    position: relative;
+    width: 100%;
+    background-color: #EEE;
+}
+
+.progress4.cssProgress-bg {
+    background-color: #bbdefb !important;
+}
+
+.progress4.cssProgress-bg-info {
+    background-color: #d1c4e9 !important;
+}
+
+.progress4.cssProgress-bg-danger {
+    background-color: #ffcdd2 !important;
+}
+
+.progress4.cssProgress-bg-success {
+    background-color: #c8e6c9 !important;
+}
+
+.progress4.cssProgress-bg-warning {
+    background-color: #ffecb3 !important;
+}
+
+.progress4 .cssProgress-bar {
+    display: block;
+    float: none;
+    width: 0%;
+    height: 4px;
+    background: #3798d9;
+}
+
+.progress4 .cssProgress-bar.cssProgress-lg {
+    height: 6px;
+}
+
+.progress4 .cssProgress-bar.cssProgress-2x {
+    height: 8px;
+}
+
+.progress4 .cssProgress-bar.cssProgress-3x {
+    height: 10px;
+}
+
+.progress4 .cssProgress-bar.cssProgress-4x {
+    height: 12px;
+}
+
+.progress4 .cssProgress-bar.cssProgress-5x {
+    height: 14px;
+}
+
+.progress4 .cssProgress-bar.cssProgress-glow {
+    box-shadow: 5px 0px 15px 0px #3798D9;
+}
+
+.progress4 .cssProgress-bar.cssProgress-glow.cssProgress-info {
+    box-shadow: 5px 0px 15px 0px #9575cd;
+}
+
+.progress4 .cssProgress-bar.cssProgress-glow.cssProgress-danger {
+    box-shadow: 5px 0px 15px 0px #ef5350;
+}
+
+.progress4 .cssProgress-bar.cssProgress-glow.cssProgress-success {
+    box-shadow: 5px 0px 15px 0px #66bb6a;
+}
+
+.progress4 .cssProgress-bar.cssProgress-glow.cssProgress-warning {
+    box-shadow: 5px 0px 15px 0px #ffb74d;
+}
